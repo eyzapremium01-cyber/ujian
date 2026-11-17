@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101725">
+    <title>Masuk — Ruang Ujian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ujian.css">
+</head>
+<body>
+    <main class="login-page">
+        <div class="ambient ambient-one" aria-hidden="true"></div>
+        <div class="ambient ambient-two" aria-hidden="true"></div>
+
+        <a class="brand" href="#beranda" aria-label="Ruang Ujian, beranda">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none"><path d="M7 5.5h12.2L25 11v15.5H7V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M19 5.8V12h5.7M11.5 17h9M11.5 21h6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <span>ruang<span class="brand-light">ujian</span></span>
+        </a>
+
+        <section class="login-layout" aria-label="Masuk ke Ruang Ujian">
+            <div class="intro-panel">
+                <div class="intro-content">
+                    <span class="eyebrow"><span class="eyebrow-dot"></span> BELAJAR, UKUR, BERTUMBUH</span>
+                    <h1>Setiap langkah kecil<br>membawamu <span>lebih jauh.</span></h1>
+                    <p>Tempat yang nyaman untuk mengerjakan ujian dan melihat seberapa jauh kamu sudah berkembang.</p>
+                    <div class="quote-card">
+                        <span class="quote-icon" aria-hidden="true">“</span>
+                        <p>Fokus pada proses. Hasil baik akan mengikuti.</p>
+                        <span class="quote-rule"></span>
+                    </div>
+                </div>
+                <div class="panel-footer"><span class="status-dot"></span> SIAP UNTUK LANGKAH BERIKUTNYA?</div>
+            </div>
+
+            <div class="form-panel">
+                <div class="form-inner">
+                    <div class="mobile-mark" aria-hidden="true"><span>R</span></div>
+                    <div class="form-heading">
+                        <span class="form-kicker">SELAMAT DATANG KEMBALI</span>
+                        <h2>Senang melihatmu lagi.</h2>
+                        <p>Masuk untuk melanjutkan perjalanan belajarmu.</p>
+                    </div>
+
+                    <form class="login-form" action="#" method="get">
+                        <label for="email">Email</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="m5 7 7 5.5L19 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <input id="email" name="email" type="email" placeholder="nama@email.com" autocomplete="email" required>
+                        </div>
+
+                        <div class="password-label">
+                            <label for="password">Kata sandi</label>
+                            <a href="#lupa-sandi">Lupa kata sandi?</a>
+                        </div>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 14v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            <input id="password" name="password" type="password" placeholder="Masukkan kata sandi" autocomplete="current-password" required>
+                            <button class="toggle-password" type="button" aria-label="Tampilkan kata sandi" aria-pressed="false">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.8 12s3.2-6 9.2-6 9.2 6 9.2 6-3.2 6-9.2 6-9.2-6-9.2-6Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg>
+                            </button>
+                        </div>
+
+                        <label class="remember-option"><input type="checkbox" name="remember"><span class="custom-check" aria-hidden="true"></span><span>Ingat saya</span></label>
+                        <button class="submit-button" type="submit"><span>Masuk ke akun</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    </form>
+
+                    <p class="signup-prompt">Belum punya akun? <a href="daftar.html">Daftar sekarang</a></p>
+                </div>
+                <div class="form-footer"><span>© 2026 Ruang Ujian</span><a href="#bantuan">Butuh bantuan?</a></div>
+            </div>
+        </section>
+        <div class="page-note"><span class="note-line"></span> SATU UJIAN, SATU LANGKAH LEBIH MAJU <span class="note-line"></span></div>
+    </main>
+    <script src="animasi.js" defer></script>
+    <script>
+        const passwordInput = document.querySelector('#password');
+        const passwordToggle = document.querySelector('.toggle-password');
+        passwordToggle.addEventListener('click', () => {
+            const isHidden = passwordInput.type === 'password';
+            passwordInput.type = isHidden ? 'text' : 'password';
+            passwordToggle.setAttribute('aria-pressed', String(isHidden));
+            passwordToggle.setAttribute('aria-label', isHidden ? 'Sembunyikan kata sandi' : 'Tampilkan kata sandi');
+        });
+    </script>
+</body>
+</html>
